@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Form</h1>
+	<h1>${headerMsg}</h1>
 	<form action="/FirstStringMVCProject/submitAdmissionForm.html" method="post">
 		<p>
 			<input type="text" name="studentName"/>
