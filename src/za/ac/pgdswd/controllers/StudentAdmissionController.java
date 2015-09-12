@@ -1,8 +1,14 @@
 package za.ac.pgdswd.controllers;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,7 +19,15 @@ import za.ac.pgdswd.models.Student;
 
 @Controller
 public class StudentAdmissionController {
-		
+	
+	//Spring uses editors to perform tight conversions when binding data
+	@InitBinder
+	public void initBinder(WebDataBinder binder){
+		binder.setDisallowedFields(new String[] {"CellPhone"});
+		SimpleDateFormat formatter = new SimpleDateFormat("DD***MM***YYYY");
+		binder.registerCustomEditor(Date.class, "studentDOB", new CustomDateEditor(formatter, false));
+	}
+	
 	//All objects in this method are injected into all other handler methods
 	//Spring MVC always makes a call to this method first
 	@ModelAttribute
