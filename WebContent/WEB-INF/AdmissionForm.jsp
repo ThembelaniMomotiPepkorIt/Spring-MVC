@@ -9,15 +9,37 @@
 <body>
 	<h1>${headerMsg}</h1>
 	<form action="/FirstStringMVCProject/submitAdmissionForm.html" method="post">
+		Name
 		<p>
 			<input type="text" name="studentName"/>
-		</p>
+		</p><br/>
+		Hobby
 		<p>
 			<input type="text" name="studentHobby"/>
-		</p>
+		</p><br/>
+		DOB
+		<p>
+			<input type="text" name="studentDOB"/>
+		</p><br/>
+		Cellphone Number
+		<p>
+			<input type="text" name="studentCellphone"/>
+		</p><br/>
+		Skills
+		<p>
+			<select name="studentSkills" multiple>
+				<option>Core Java</option>
+				<option>Core Spring</option>
+				<option>Spring MVC</option>
+				<option>PL SQL</option>
+				<option>AngularJS</option>
+				<option>Ionic Framework</option>
+			</select>
+		</p><br/>
 		<p>
 			<input type="submit" value="submit"/>
 		</p>
+		
 		
 	
 	</form>

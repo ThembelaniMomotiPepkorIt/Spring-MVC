@@ -34,12 +34,5 @@ public class StudentAdmissionController {
 		return null;
 	}
 	
-	/*@RequestMapping(value="/submitAdmissionForm.html", method=RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@RequestParam(value="studentName", defaultValue="anonymous")String name, @RequestParam("hobby") String hobby){
-		ModelAndView modelAndView = new ModelAndView("AdmissionSuccess");
-		modelAndView.addObject("msg", "Details submitted to you: "+name+" Hobby: "+hobby);
-		return null;
-	}*/
-
 }
 
