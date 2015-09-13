@@ -18,7 +18,7 @@ public class Student {
 	
 	public Address getAddress(){
 		return address;
-	}
+	} 
 	public long getStudentCell() {
 		return studentCell;
 	}

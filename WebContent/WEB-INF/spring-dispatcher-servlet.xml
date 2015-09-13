@@ -24,4 +24,8 @@ xsi:schemaLocation="
             <value>.jsp</value> 
         </property>
     </bean>
+    
+    <bean id="MessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/studentmessages"></property>
+    </bean>
 </beans>

@@ -3,6 +3,8 @@ package za.ac.pgdswd.controllers;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,7 +48,7 @@ public class StudentAdmissionController {
 	
 	//student is automatically bound to view so it can be 
 	@RequestMapping(value="/submitAdmissionForm.html", method=RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student1, BindingResult result){
+	public ModelAndView submitAdmissionForm(@Valid @ModelAttribute("student1") Student student1, BindingResult result){
 		
 		if(result.hasErrors()){
 			ModelAndView modelAndView = new ModelAndView("AdmissionForm");
