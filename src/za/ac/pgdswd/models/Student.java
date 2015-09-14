@@ -8,12 +8,15 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import za.ac.pgdswd.interfaces.isHobbyValid;
+
 public class Student {
 	
 	@Pattern(regexp="[^0-9]*")
 	private String studentName;
 	
 	@Size(min=2, max=30)
+	@isHobbyValid
 	private String studentHobby;
 	
 	@Max(999999999)
