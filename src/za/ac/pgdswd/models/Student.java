@@ -13,10 +13,10 @@ import za.ac.pgdswd.interfaces.isHobbyValid;
 public class Student {
 	
 	@Pattern(regexp="[^0-9]*")
-	private String studentName;
+	private String studentName; 
 	
 	@Size(min=2, max=30)
-	@isHobbyValid
+	@isHobbyValid(listOfValidHobbies="Soccer|Tennis|Cricket|Rugby")
 	private String studentHobby;
 	
 	@Max(999999999)

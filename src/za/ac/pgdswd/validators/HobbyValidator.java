@@ -6,15 +6,10 @@ import javax.validation.ConstraintValidatorContext;
 import za.ac.pgdswd.interfaces.isHobbyValid;
 
 public class HobbyValidator implements ConstraintValidator<isHobbyValid, String>{
-
+	private String listOfValidHobbies;
 	@Override
 	public void initialize(isHobbyValid isHobbyValid) {
-		if(isHobbyValid ==null){
-			return false;
-		}
-		
-		if(isHobbyValid.)
-
+		this.listOfValidHobbies=isHobbyValid.listOfValidHobbies();
 		
 	}
 
@@ -25,7 +20,7 @@ public class HobbyValidator implements ConstraintValidator<isHobbyValid, String>
 		if(studentHobby ==null){
 			flag = false;
 		}
-		if(studentHobby.matches("Soccer|Tennis|Cricket|Rugby")){
+		if(studentHobby.matches(listOfValidHobbies)){
 			flag = true; 
 		}else{
 			flag = false;
