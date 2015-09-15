@@ -13,11 +13,16 @@ xsi:schemaLocation="
 
       
     <context:component-scan base-package="za.ac.pgdswd"/>
+    <mvc:annotation-driven/>
     
     <mvc:interceptors>
-        <bean class="za.ac.pgdswd.interceptors.DayOfWeekBasedAccessInterceptor"/>
+    	<mvc:interceptors>
+        	<mvc:mapping path="/admissionForm.html"/>
+        	<bean class="za.ac.pgdswd.interceptors.DayOfWeekBasedAccessInterceptor"/>
+    	</mvc:interceptors>    
     </mvc:interceptors>
-    <mvc:annotation-driven/>
+    
+    
     
     <bean id = "viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
