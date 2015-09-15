@@ -14,6 +14,9 @@ xsi:schemaLocation="
       
     <context:component-scan base-package="za.ac.pgdswd"/>
     
+    <mvc:interceptors>
+        <bean class="za.ac.pgdswd.interceptors.DayOfWeekBasedAccessInterceptor"/>
+    </mvc:interceptors>
     <mvc:annotation-driven/>
     
     <bean id = "viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
